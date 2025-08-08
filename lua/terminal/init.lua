@@ -83,7 +83,7 @@ function M.switch_to_terminal(terminal_name)
             { prompt = 'Switch to Terminal' },
             function(choice)
                 if choice then
-                    switch_to_terminal(choice)
+                    M.switch_to_terminal(choice)
                 end
             end
         )
@@ -124,7 +124,7 @@ end
 function M.goto_terminal(num)
     if num > 0 and num <= #term_order then
         local terminal_name = term_order[num]
-        switch_to_terminal(terminal_name)
+        M.switch_to_terminal(terminal_name)
     else
         vim.notify('No terminal at index ' .. num .. ' exists.')
     end
